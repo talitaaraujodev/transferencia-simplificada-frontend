@@ -1,0 +1,12 @@
+@import "../../../assets/scss/variables.scss";
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  color: $gray-secondary;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: .6rem;
+  flex: 1;
+}

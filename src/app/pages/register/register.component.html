@@ -1,0 +1,79 @@
+<main class="container-register">
+  <section class="content-register">
+    <div class="form-register">
+      <form (ngSubmit)="registrar()">
+        <h2 class="form-register__title">Registre-se</h2>
+        <div class="form-group">
+          <label for="value" class="form-group__label">Nome </label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="form-group__input"
+            placeholder="Digite seu nome..."
+            [(ngModel)]="user.name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="value" class="form-group__label">E-mail </label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            class="form-group__input"
+            placeholder="Digite seu e-mail..."
+            [(ngModel)]="user.email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="value" class="form-group__label">CPF </label>
+          <input
+            type="text"
+            name="cpf"
+            id="cpf"
+            class="form-group__input"
+            placeholder="Digite seu cpf..."
+            [(ngModel)]="user.cpf"
+            mask="000.000.000-00"
+          />
+        </div>
+        <div class="form-group">
+          <label for="value" class="form-group__label">Telefone </label>
+          <input
+            type="text"
+            name="telefone"
+            id="telefone"
+            class="form-group__input"
+            placeholder="Digite seu telefone..."
+            [(ngModel)]="user.telefone"
+            mask="(00) 00000-0000||(00) 0000-0000"
+            placeholder="Digite seu telefone..."
+          />
+        </div>
+        <div class="form-group">
+          <label for="value" class="form-group__label">Password </label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="form-group__input"
+            placeholder="Digite sua senha..."
+            [(ngModel)]="user.password"
+          />
+        </div>
+        <div class="btn-wrapper">
+          <button class="btn-wrapper__btn" type="submit">Enviar</button>
+        </div>
+      </form>
+      <div class="form-register-footer">
+        <span>
+          <a routerLink="/login">Logar </a>
+        </span>
+        <span class="form-register-footer__text"
+          >Campos marcados com * são obrigatórios</span
+        >
+      </div>
+    </div>
+  </section>
+  <app-footer></app-footer>
+</main>

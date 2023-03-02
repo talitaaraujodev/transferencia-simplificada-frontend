@@ -1,0 +1,16 @@
+$white-primary: #fff;
+$white-secondary: #f0f2ff;
+$black: #000;
+$blue-primary: #00d2ff;
+$blue-secondary: #42e0eb;
+$purple-primary: #3a7bd5;
+$purple-secondary: #5b86e5;
+$red: #f30066;
+$gray-primary: #a9b1bc;
+$gray-secondary: #dbe4ef;
+$gradient-background: linear-gradient(
+  to bottom,
+  $blue-secondary,
+  $purple-secondary
+);
+$gradient-primary: linear-gradient(to left, $purple-primary, $blue-primary);
