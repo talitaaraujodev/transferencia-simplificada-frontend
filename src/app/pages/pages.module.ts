@@ -10,6 +10,8 @@ import { NgxMaskModule } from 'ngx-mask';
 import { HomeComponent } from './home/home.component';
 import { NewTransferenciaComponent } from './new-transferencia/new-transferencia.component';
 import { TransferenciasComponent } from './transferencias/transferencias.component';
+import { NewCarteiraComponent } from './new-carteira/new-carteira.component';
+import { CarteirasComponent } from './carteiras/carteiras.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { TransferenciasComponent } from './transferencias/transferencias.compone
     HomeComponent,
     NewTransferenciaComponent,
     TransferenciasComponent,
+    NewCarteiraComponent,
+    CarteirasComponent,
   ],
   imports: [
     CommonModule,
