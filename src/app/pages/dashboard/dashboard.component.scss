@@ -1,6 +1,6 @@
 @import "../../../assets/scss/variables.scss";
 
-.home {
+.dashboard {
   position: fixed;
   display: flex;
   flex-direction: row;
@@ -8,20 +8,19 @@
   height: 100%;
   background-color: #f0f2ff;
 }
-.container-home {
-  // margin: 2rem;
+.container-dashboard {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
-
   flex: 1;
+  margin: 2.2rem;
 }
-.content {
+.content-dashboard {
+  width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
-  flex: 1;
-  background-color: gray;
+  overflow-y: auto;
+  overflow-x: hidden;
 }

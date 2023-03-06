@@ -1,13 +1,25 @@
-<main>
-  <nav class="nav">
-    <div class="nav__alert">
+<main class="sidebar">
+  <nav class="sidebar__nav">
+    <div class="sidebar__alert">
       <span>Olá fulano!</span>
     </div>
     <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Tranferências</a></li>
-      <li><a href="#">Nova Tranferência</a></li>
-      <li><a href="#">Sair</a></li>
+      <li class="sidebar__nav-item">
+        <a class="sidebar__nav-link" routerLink="/home">Home</a>
+      </li>
+      <li class="sidebar__nav-item">
+        <a class="sidebar__nav-link" routerLink="/nova-transferencia"
+          >Tranferências</a
+        >
+      </li>
+      <li class="sidebar__nav-item">
+        <a class="sidebar__nav-link" routerLink="/transferencias"
+          >Nova Tranferência</a
+        >
+      </li>
+      <li class="sidebar__nav-item">
+        <a class="sidebar__nav-link" routerLink="/login">Sair</a>
+      </li>
     </ul>
   </nav>
 </main>
