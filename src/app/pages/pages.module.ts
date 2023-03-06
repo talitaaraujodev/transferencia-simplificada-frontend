@@ -12,12 +12,14 @@ import { NewTransferenciaComponent } from './new-transferencia/new-transferencia
 import { TransferenciasComponent } from './transferencias/transferencias.component';
 import { NewCarteiraComponent } from './new-carteira/new-carteira.component';
 import { CarteirasComponent } from './carteiras/carteiras.component';
+import { ForgoutPasswordComponent } from './forgout-password/forgout-password.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     DashboardComponent,
     RegisterComponent,
+    ForgoutPasswordComponent,
     HomeComponent,
     NewTransferenciaComponent,
     TransferenciasComponent,

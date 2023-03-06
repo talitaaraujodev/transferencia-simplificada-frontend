@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CarteirasComponent } from './carteiras/carteiras.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForgoutPasswordComponent } from './forgout-password/forgout-password.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NewCarteiraComponent } from './new-carteira/new-carteira.component';
@@ -29,6 +30,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'forgout-password',
+    component: ForgoutPasswordComponent,
   },
   { path: '**', component: NotFoundComponent },
 ];
