@@ -1,7 +1,7 @@
 <main class="container-register">
   <section class="content-register">
     <div class="form-register">
-      <form (ngSubmit)="registrar()">
+      <form [formGroup]="registerForm" (submit)="registrar()">
         <h2 class="form-register__title">Registre-se</h2>
         <div class="form-group">
           <label for="value" class="form-group__label">Nome </label>
@@ -11,9 +11,20 @@
             id="name"
             class="form-group__input"
             placeholder="Digite seu nome..."
-            [(ngModel)]="user.name"
+            formControlName="name"
           />
         </div>
+        <app-message
+          *ngIf="
+            registerForm.get('name')?.errors?.required &&
+            registerForm.get('name')?.touched
+          "
+          message="Nome é um campo obrigatório"
+        ></app-message>
+        <app-message
+          *ngIf="registerForm.get('name')?.errors?.minlength"
+          message="Nome deve ter pelo menos 4 caracteres"
+        ></app-message>
         <div class="form-group">
           <label for="value" class="form-group__label">E-mail </label>
           <input
@@ -22,9 +33,23 @@
             id="email"
             class="form-group__input"
             placeholder="Digite seu e-mail..."
-            [(ngModel)]="user.email"
+            formControlName="email"
           />
         </div>
+        <app-message
+          *ngIf="
+            registerForm.get('email')?.errors?.required &&
+            registerForm.get('email')?.touched
+          "
+          message="E-mail é um campo obrigatório"
+        ></app-message>
+        <app-message
+          *ngIf="
+            registerForm.get('email')?.errors?.email &&
+            registerForm.get('email')?.touched
+          "
+          message="E-mail no formato incorreto"
+        ></app-message>
         <div class="form-group">
           <label for="value" class="form-group__label">CPF </label>
           <input
@@ -33,10 +58,21 @@
             id="cpf"
             class="form-group__input"
             placeholder="Digite seu cpf..."
-            [(ngModel)]="user.cpf"
+            formControlName="cpf"
             mask="000.000.000-00"
           />
         </div>
+        <app-message
+          *ngIf="
+            registerForm.get('cpf')?.errors?.required &&
+            registerForm.get('cpf')?.touched
+          "
+          message="Cpf é um campo obrigatório"
+        ></app-message>
+        <app-message
+          *ngIf="registerForm.get('cpf')?.errors?.minlength"
+          message="Cpf deve ter pelo menos 11 caracteres"
+        ></app-message>
         <div class="form-group">
           <label for="value" class="form-group__label">Telefone </label>
           <input
@@ -45,11 +81,22 @@
             id="telefone"
             class="form-group__input"
             placeholder="Digite seu telefone..."
-            [(ngModel)]="user.telefone"
+            formControlName="telefone"
             mask="(00) 00000-0000||(00) 0000-0000"
             placeholder="Digite seu telefone..."
           />
         </div>
+        <app-message
+          *ngIf="
+            registerForm.get('telefone')?.errors?.required &&
+            registerForm.get('telefone')?.touched
+          "
+          message="Telefone é um campo obrigatório"
+        ></app-message>
+        <app-message
+          *ngIf="registerForm.get('telefone')?.errors?.minlength"
+          message="Telefone deve ter pelo menos 10 caracteres"
+        ></app-message>
         <div class="form-group">
           <label for="value" class="form-group__label">Password </label>
           <input
@@ -58,11 +105,30 @@
             id="password"
             class="form-group__input"
             placeholder="Digite sua senha..."
-            [(ngModel)]="user.password"
+            formControlName="password"
           />
         </div>
+        <app-message
+          *ngIf="
+            registerForm.get('password')?.errors?.required &&
+            registerForm.get('password')?.touched
+          "
+          message="Password é um campo obrigatório"
+        ></app-message>
+        <app-message
+          *ngIf="registerForm.get('password')?.errors?.minlength"
+          message="Senha deve ter pelo menos 6 caracteres"
+        ></app-message>
         <div class="btn-wrapper">
-          <button class="btn-wrapper__btn" type="submit">Enviar</button>
+          <button
+            type="submit"
+            [ngClass]="{
+              'btn-wrapper__disabled': registerForm.invalid,
+              'btn-wrapper__btn': !registerForm.invalid
+            }"
+          >
+            Enviar
+          </button>
         </div>
       </form>
       <div class="form-register-footer">

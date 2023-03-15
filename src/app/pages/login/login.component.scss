@@ -106,4 +106,17 @@
       opacity: 0.7;
     }
   }
+  &__disabled {
+    width: 100%;
+    text-align: center;
+    border: none;
+    background: $gradient-primary;
+    padding: 0.8em;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    color: $white-primary;
+    font-size: 1.1rem;
+    border-radius: 7px;
+    opacity: 0.6;
+  }
 }

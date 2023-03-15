@@ -6,8 +6,6 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
-  @Output() register = new EventEmitter<any>();
-
   email: string = '';
   password: string = '';
 

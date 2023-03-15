@@ -1,7 +1,7 @@
 <main class="container-login">
   <section class="content-login">
     <div class="form-login">
-      <form (ngSubmit)="auth()">
+      <form (ngSubmit)="auth()" #loginForm="ngForm">
         <h2 class="form-login__title">Login</h2>
         <div class="form-group">
           <label for="value" class="form-group__label">E-mail </label>
@@ -11,9 +11,15 @@
             id="email"
             class="form-group__input"
             placeholder="Digite seu e-mail..."
+            required
             [(ngModel)]="email"
+            #fieldEmail="ngModel"
           />
         </div>
+        <app-message
+          *ngIf="fieldEmail.invalid && fieldEmail.touched"
+          message="E-mail é um campo obrigatório"
+        ></app-message>
         <div class="form-group">
           <label for="value" class="form-group__label">Password </label>
           <input
@@ -22,11 +28,25 @@
             id="password"
             class="form-group__input"
             placeholder="Digite sua senha..."
+            required
             [(ngModel)]="password"
+            #fieldPassword="ngModel"
           />
         </div>
+        <app-message
+          *ngIf="fieldPassword.invalid && fieldPassword.touched"
+          message="Senha é um campo obrigatório"
+        ></app-message>
         <div class="btn-wrapper">
-          <button class="btn-wrapper__btn" type="submit">Entrar</button>
+          <button
+            type="submit"
+            [ngClass]="{
+              'btn-wrapper__disabled': loginForm.invalid,
+              'btn-wrapper__btn': !loginForm.invalid
+            }"
+          >
+            Entrar
+          </button>
         </div>
       </form>
       <div class="form-login-footer">
