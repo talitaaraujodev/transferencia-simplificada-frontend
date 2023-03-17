@@ -1,11 +1,11 @@
 <main class="sidebar">
   <nav class="sidebar__nav">
-    <div class="sidebar__alert">
-      <span>Olá fulano!</span>
+    <div class="sidebar__alert" *ngIf="user$ | async as user">
+      <span>Olá {{ user.name }}!</span>
     </div>
     <ul>
       <li class="sidebar__nav-item">
-        <a class="sidebar__nav-link" routerLink="/home">Home</a>
+        <a class="sidebar__nav-link" routerLink="/">Home</a>
       </li>
       <li class="sidebar__nav-item">
         <a class="sidebar__nav-link" routerLink="/transferencias"
@@ -13,9 +13,7 @@
         >
       </li>
       <li class="sidebar__nav-item">
-        <a class="sidebar__nav-link" routerLink="/carteiras"
-          >Carteiras</a
-        >
+        <a class="sidebar__nav-link" routerLink="/carteiras">Carteiras</a>
       </li>
       <li class="sidebar__nav-item">
         <a class="sidebar__nav-link" routerLink="/nova-transferencia"
@@ -28,7 +26,7 @@
         >
       </li>
       <li class="sidebar__nav-item">
-        <a class="sidebar__nav-link" routerLink="/login">Sair</a>
+        <a class="sidebar__nav-link" (click)="logout()">Sair</a>
       </li>
     </ul>
   </nav>

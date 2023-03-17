@@ -1,7 +1,7 @@
 <main class="container-login">
   <section class="content-login">
     <div class="form-login">
-      <form (ngSubmit)="auth()" #loginForm="ngForm">
+      <form [formGroup]="loginForm" (submit)="onSubmit()">
         <h2 class="form-login__title">Login</h2>
         <div class="form-group">
           <label for="value" class="form-group__label">E-mail </label>
@@ -11,14 +11,22 @@
             id="email"
             class="form-group__input"
             placeholder="Digite seu e-mail..."
-            required
-            [(ngModel)]="email"
-            #fieldEmail="ngModel"
+            formControlName="email"
           />
         </div>
         <app-message
-          *ngIf="fieldEmail.invalid && fieldEmail.touched"
+          *ngIf="
+            loginForm.get('email')?.errors?.required &&
+            loginForm.get('email')?.touched
+          "
           message="E-mail é um campo obrigatório"
+        ></app-message>
+        <app-message
+          *ngIf="
+            loginForm.get('email')?.errors?.email &&
+            loginForm.get('email')?.touched
+          "
+          message="E-mail no formato incorreto"
         ></app-message>
         <div class="form-group">
           <label for="value" class="form-group__label">Password </label>
@@ -28,14 +36,19 @@
             id="password"
             class="form-group__input"
             placeholder="Digite sua senha..."
-            required
-            [(ngModel)]="password"
-            #fieldPassword="ngModel"
+            formControlName="password"
           />
         </div>
         <app-message
-          *ngIf="fieldPassword.invalid && fieldPassword.touched"
+          *ngIf="
+            loginForm.get('password')?.errors?.required &&
+            loginForm.get('password')?.touched
+          "
           message="Senha é um campo obrigatório"
+        ></app-message>
+        <app-message
+          *ngIf="loginForm.get('password')?.errors?.minlength"
+          message="Senha deve ter pelo menos 6 caracteres"
         ></app-message>
         <div class="btn-wrapper">
           <button

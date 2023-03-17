@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from '../guards/auth.guard';
 import { CarteirasComponent } from './carteiras/carteiras.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForgoutPasswordComponent } from './forgout-password/forgout-password.component';
@@ -16,12 +17,13 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children: [
-      { path: 'home', component: HomeComponent },
+      { path: '', component: HomeComponent },
       { path: 'transferencias', component: TransferenciasComponent },
       { path: 'nova-transferencia', component: NewTransferenciaComponent },
       { path: 'carteiras', component: CarteirasComponent },
       { path: 'nova-carteira', component: NewCarteiraComponent },
     ],
+    canActivate: [AuthGuard],
   },
   {
     path: 'login',

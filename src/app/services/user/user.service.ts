@@ -2,33 +2,34 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment.development';
 import { User } from 'src/app/models/User';
-import { tap } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
+import { utils } from '../../utils';
+import jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
+  private userSubject = new BehaviorSubject<any>({});
   constructor(private httpClient: HttpClient) {}
 
+  getUserLogged() {
+    const token = utils.getToken();
+    if (token) {
+      const user = jwt_decode(token);
+      this.userSubject.next(user);
+      return this.userSubject.asObservable();
+    }
+    return null;
+  }
   register(data: User) {
     return this.httpClient.post(`${environment.apiURL}/users`, data);
   }
-  login(email: string, password: string) {
-    return this.httpClient
-      .post(
-        `${environment.apiURL}/login`,
-        {
-          email: email,
-          password: password,
-        },
-        { observe: 'response' }
-      )
-      .pipe(
-        tap((response) => {
-          console.log(response);
-          // const authToken = response.headers.get('x-access-token') ?? '';
-          // this.userService.saveToken(authToken);
-        })
-      );
+  logout() {
+    utils.removeToken();
+    this.userSubject.next({});
+  }
+  logged() {
+    return utils.getToken() ? true : false;
   }
 }
