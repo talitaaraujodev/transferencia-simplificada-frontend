@@ -1,7 +1,7 @@
 <main class="container-register">
   <section class="content-register">
     <div class="form-register">
-      <form [formGroup]="registerForm" (submit)="registrar()">
+      <form [formGroup]="registerForm" (submit)="cadastro()">
         <h2 class="form-register__title">Registre-se</h2>
         <div class="form-group">
           <label for="value" class="form-group__label">Nome </label>
@@ -119,6 +119,7 @@
           *ngIf="registerForm.get('password')?.errors?.minlength"
           message="Senha deve ter pelo menos 6 caracteres"
         ></app-message>
+
         <div class="btn-wrapper">
           <button
             type="submit"
