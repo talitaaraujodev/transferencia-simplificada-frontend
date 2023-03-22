@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../guards/auth.guard';
 import { CarteirasComponent } from './carteiras/carteiras.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardComponent } from '../components/dashboard/dashboard.component';
 import { ForgoutPasswordComponent } from './forgout-password/forgout-password.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';

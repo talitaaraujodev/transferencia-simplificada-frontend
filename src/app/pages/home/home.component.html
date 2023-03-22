@@ -1,1 +1,92 @@
-<p>home works!</p>
+<main class="home">
+  <div class="home-container">
+    <div class="home-card">
+      <div class="home-card__header">
+        <h2>Talita Cumi Araujo de Oliveira Santos</h2>
+        <span>Saldo Disponivel</span>
+        <strong>R$ <span>1.500,00 </span></strong>
+      </div>
+      <div class="home-card__content">
+        <strong>Cpf</strong>
+        <span>000.000.000-00</span>
+        <strong>Telefone</strong>
+        <span>(85) 95600-6545</span>
+        <strong>E-mail</strong>
+        <span>talita@gmail.com</span>
+      </div>
+      <div class="home-card__footer">
+        <button class="home-card-btn" routerLink="/nova-transferencia">
+          Nova Tranferência
+        </button>
+        <button class="home-card-btn">Conta</button>
+      </div>
+    </div>
+    <div class="home-card">
+      <div class="home-card__header">
+        <h2 class="home-card-title">Nova Carteira</h2>
+      </div>
+      <div class="home-card__content">
+        <small>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nobis modi
+          cum placeat ab est necessitatibus atque deleniti ea rerum iure illum
+          earum architecto vero culpa, fugit, totam harum ipsam dicta. Lorem
+          ipsum dolor sit, amet consectetur adipisicing elit. Rerum, pariatur
+          quos facere dolore excepturi iste perferendis nihil possimus vel
+          reiciendis optio ipsam ratione, praesentium nobis. Quod inventore iste
+          voluptas atque! Lorem, ipsum dolor sit amet consectetur adipisicing
+          elit. Vero repudiandae deserunt, rem ipsa odit, hic assumenda impedit
+          officia repellendus, voluptate aut id reiciendis eos consequuntur?
+          Incidunt aperiam impedit magnam voluptate. Lorem, ipsum dolor sit amet
+          consectetur adipisicing elit. Architecto, modi consequatur? Mollitia a
+          distinctio sapiente ullam tenetur hic consectetur in laudantium
+          doloribus ducimus praesentium, nemo harum repellendus pariatur?
+          Eveniet, atque?
+        </small>
+      </div>
+      <div class="home-card__footer">
+        <button class="home-card-btn" routerLink="/nova-carteira">Criar</button>
+      </div>
+    </div>
+    <div class="home-card">
+      <div class="home-card__header">
+        <h3>Tranferências</h3>
+      </div>
+      <canvas id="chartTransfers">{{ chart }}</canvas>
+    </div>
+    <div class="home-card">
+      <div class="home-card__header">
+        <h3>Últimas Tranferências</h3>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Joao Santos</td>
+            <td>$112,00</td>
+          </tr>
+          <tr>
+            <td>Talita Araujo</td>
+            <td>$10,20</td>
+          </tr>
+          <tr>
+            <td>Joao Santos</td>
+            <td>$500,00</td>
+          </tr>
+          <tr>
+            <td>Jose Silva</td>
+            <td>$120,00</td>
+          </tr>
+          <tr>
+            <td>Maria do Carmo</td>
+            <td>$10,00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>
