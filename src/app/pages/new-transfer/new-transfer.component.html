@@ -1,16 +1,31 @@
-<main class="new-wallet">
+<main class="new-transfer">
   <h2>Nova Tranferência</h2>
-  <div class="container-new-wallet">
-    <form class="form-new-wallet">
+  <div class="container-new-transfer">
+    <form
+      class="form-new-transfer"
+      [formGroup]="transferForm"
+      (submit)="saveTransfer()"
+    >
       <div class="form-group">
         <label for="" class="form-group__label"> Carteira </label>
-        <select name="wallet" id="wallet" class="form-group__input">
-          <option value="" selected data-default>Selecione o carteira</option>
-          <option value="user1">Wallet 1</option>
-          <option value="user2">Wallet 2</option>
-          <option value="user3">Wallet 3</option>
+        <select
+          name="wallet"
+          id="wallet"
+          class="form-group__input"
+          formControlName="wallet"
+        >
+          <option *ngFor="let wallet of wallets" [value]="wallet.user.id">
+            {{ wallet.user.name }}
+          </option>
         </select>
       </div>
+      <app-message
+        *ngIf="
+          transferForm.get('wallet')?.errors?.required &&
+          transferForm.get('wallet')?.touched
+        "
+        message="Carteira é um campo obrigatório"
+      ></app-message>
       <div class="form-group">
         <label for="" class="form-group__label">Valor </label>
         <input
@@ -18,10 +33,18 @@
           name="value"
           id="value"
           class="form-group__input"
-          placeholder="Selecione o valor..."
+          placeholder="Digite o valor..."
+          formControlName="value"
         />
       </div>
-      <button type="submit" class="btn-new-wallet">Enviar</button>
+      <app-message
+        *ngIf="
+          transferForm.get('value')?.errors?.required &&
+          transferForm.get('value')?.touched
+        "
+        message="Valor é um campo obrigatório"
+      ></app-message>
+      <button type="submit" class="btn-new-transfer">Enviar</button>
     </form>
   </div>
 </main>

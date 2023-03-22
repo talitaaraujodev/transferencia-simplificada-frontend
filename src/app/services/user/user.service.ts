@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment.development';
 import { User } from 'src/app/models/User';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { utils } from '../../utils';
 import jwt_decode from 'jwt-decode';
 
@@ -31,5 +31,8 @@ export class UserService {
   }
   logged() {
     return utils.getToken() ? true : false;
+  }
+  getUsers(): Observable<User[]> {
+    return this.httpClient.get<User[]>(`${environment.apiURL}/users`);
   }
 }

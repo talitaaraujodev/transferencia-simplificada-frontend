@@ -1,16 +1,31 @@
 <main class="new-wallet">
   <h2>Nova Carteira</h2>
   <div class="container-new-wallet">
-    <form class="form-new-wallet">
+    <form
+      class="form-new-wallet"
+      [formGroup]="walletForm"
+      (submit)="saveWallet()"
+    >
       <div class="form-group">
         <label for="" class="form-group__label"> Usuário </label>
-        <select name="user" id="user" class="form-group__input">
-          <option value="" selected data-default>Selecione o usuário</option>
-          <option value="user1">User 1</option>
-          <option value="user2">User 2</option>
-          <option value="user3">User 3</option>
+        <select
+          name="user"
+          id="user"
+          class="form-group__input"
+          formControlName="user"
+        >
+          <option *ngFor="let user of users" [value]="user.id">
+            {{ user.name }}
+          </option>
         </select>
       </div>
+      <app-message
+        *ngIf="
+          walletForm.get('user')?.errors?.required &&
+          walletForm.get('user')?.touched
+        "
+        message="Usuário é um campo obrigatório"
+      ></app-message>
       <div class="form-group">
         <label for="" class="form-group__label">Valor </label>
         <input
@@ -18,9 +33,17 @@
           name="value"
           id="value"
           class="form-group__input"
-          placeholder="Selecione o valor..."
+          placeholder="Digite o valor..."
+          formControlName="value"
         />
       </div>
+      <app-message
+        *ngIf="
+          walletForm.get('value')?.errors?.required &&
+          walletForm.get('value')?.touched
+        "
+        message="Valor é um campo obrigatório"
+      ></app-message>
       <button type="submit" class="btn-new-wallet">Enviar</button>
     </form>
   </div>
