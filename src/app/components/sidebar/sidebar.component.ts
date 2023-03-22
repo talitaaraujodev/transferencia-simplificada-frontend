@@ -33,6 +33,7 @@ export class SidebarComponent {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       confirmButtonText: 'Sair',
+      cancelButtonText: 'Cancelar',
     }).then((result) => {
       if (result.isConfirmed) {
         this.userService.logout();

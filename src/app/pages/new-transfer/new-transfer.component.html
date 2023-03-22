@@ -1,1 +1,27 @@
-<p>new-transfer works!</p>
+<main class="new-wallet">
+  <h2>Nova Tranferência</h2>
+  <div class="container-new-wallet">
+    <form class="form-new-wallet">
+      <div class="form-group">
+        <label for="" class="form-group__label"> Carteira </label>
+        <select name="wallet" id="wallet" class="form-group__input">
+          <option value="" selected data-default>Selecione o carteira</option>
+          <option value="user1">Wallet 1</option>
+          <option value="user2">Wallet 2</option>
+          <option value="user3">Wallet 3</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="" class="form-group__label">Valor </label>
+        <input
+          type="number"
+          name="value"
+          id="value"
+          class="form-group__input"
+          placeholder="Selecione o valor..."
+        />
+      </div>
+      <button type="submit" class="btn-new-wallet">Enviar</button>
+    </form>
+  </div>
+</main>

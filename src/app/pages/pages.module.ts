@@ -13,7 +13,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NewTransferComponent } from './new-transfer/new-transfer.component';
 import { NewWalletComponent } from './new-wallet/new-wallet.component';
 import { TransfersComponent } from './transfers/transfers.component';
-import { WalletsComponent } from './wallets/wallets.component';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -23,7 +22,6 @@ import { WalletsComponent } from './wallets/wallets.component';
     NewTransferComponent,
     NewWalletComponent,
     TransfersComponent,
-    WalletsComponent,
   ],
   imports: [
     CommonModule,

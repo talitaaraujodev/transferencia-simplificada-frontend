@@ -10,7 +10,6 @@ import { RegisterComponent } from './register/register.component';
 import { TransfersComponent } from './transfers/transfers.component';
 import { NewTransferComponent } from './new-transfer/new-transfer.component';
 import { NewWalletComponent } from './new-wallet/new-wallet.component';
-import { WalletsComponent } from './wallets/wallets.component';
 
 const routes: Routes = [
   {
@@ -20,7 +19,6 @@ const routes: Routes = [
       { path: '', component: HomeComponent },
       { path: 'transferencias', component: TransfersComponent },
       { path: 'nova-transferencia', component: NewTransferComponent },
-      { path: 'carteiras', component: WalletsComponent },
       { path: 'nova-carteira', component: NewWalletComponent },
     ],
     canActivate: [AuthGuard],
