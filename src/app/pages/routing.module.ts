@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../guards/auth.guard';
-import { CarteirasComponent } from './carteiras/carteiras.component';
 import { DashboardComponent } from '../components/dashboard/dashboard.component';
 import { ForgoutPasswordComponent } from './forgout-password/forgout-password.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { NewCarteiraComponent } from './new-carteira/new-carteira.component';
-import { NewTransferenciaComponent } from './new-transferencia/new-transferencia.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RegisterComponent } from './register/register.component';
-import { TransferenciasComponent } from './transferencias/transferencias.component';
+import { TransfersComponent } from './transfers/transfers.component';
+import { NewTransferComponent } from './new-transfer/new-transfer.component';
+import { NewWalletComponent } from './new-wallet/new-wallet.component';
+import { WalletsComponent } from './wallets/wallets.component';
 
 const routes: Routes = [
   {
@@ -18,10 +18,10 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'transferencias', component: TransferenciasComponent },
-      { path: 'nova-transferencia', component: NewTransferenciaComponent },
-      { path: 'carteiras', component: CarteirasComponent },
-      { path: 'nova-carteira', component: NewCarteiraComponent },
+      { path: 'transferencias', component: TransfersComponent },
+      { path: 'nova-transferencia', component: NewTransferComponent },
+      { path: 'carteiras', component: WalletsComponent },
+      { path: 'nova-carteira', component: NewWalletComponent },
     ],
     canActivate: [AuthGuard],
   },

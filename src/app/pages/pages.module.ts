@@ -7,23 +7,23 @@ import { SharedModule } from '../components/shared.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxMaskModule } from 'ngx-mask';
 import { HomeComponent } from './home/home.component';
-import { NewTransferenciaComponent } from './new-transferencia/new-transferencia.component';
-import { TransferenciasComponent } from './transferencias/transferencias.component';
-import { NewCarteiraComponent } from './new-carteira/new-carteira.component';
-import { CarteirasComponent } from './carteiras/carteiras.component';
 import { ForgoutPasswordComponent } from './forgout-password/forgout-password.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NewTransferComponent } from './new-transfer/new-transfer.component';
+import { NewWalletComponent } from './new-wallet/new-wallet.component';
+import { TransfersComponent } from './transfers/transfers.component';
+import { WalletsComponent } from './wallets/wallets.component';
 @NgModule({
   declarations: [
     LoginComponent,
     RegisterComponent,
     ForgoutPasswordComponent,
     HomeComponent,
-    NewTransferenciaComponent,
-    TransferenciasComponent,
-    NewCarteiraComponent,
-    CarteirasComponent,
+    NewTransferComponent,
+    NewWalletComponent,
+    TransfersComponent,
+    WalletsComponent,
   ],
   imports: [
     CommonModule,
