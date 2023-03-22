@@ -27,6 +27,10 @@
       font-weight: bold;
       color: $black;
     }
+    .icon-home {
+      
+      margin-right: 0.6rem;
+    }
 
     h2 {
       font-size: 1.5rem;
@@ -96,7 +100,8 @@
       }
       box-sizing: border-box;
     }
-    tbody,td {
+    tbody,
+    td {
       color: #737272;
       font-weight: bold;
     }
@@ -104,8 +109,7 @@
       color: #007bff;
       font-size: 1.1rem;
       font-weight: bold;
-      border-bottom: 2px solid #a9b1bc;
-     
+      border-bottom: 2px solid #007bff;
     }
   }
 }

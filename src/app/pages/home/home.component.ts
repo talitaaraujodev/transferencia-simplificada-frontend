@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import Chart from 'chart.js/auto';
+import { faChartSimple, faListUl } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,7 +8,8 @@ import Chart from 'chart.js/auto';
 })
 export class HomeComponent {
   chart!: Chart;
-
+  faChart = faChartSimple;
+  faList = faListUl
   ngOnInit(): void {
     this.createChart();
   }

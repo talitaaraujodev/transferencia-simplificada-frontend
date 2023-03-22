@@ -20,6 +20,9 @@
         text-decoration: none;
         color: $white-primary;
         font-size: 1rem;
+        .icon-sidebar {
+          margin-right: 0.4rem;
+        }
       }
       &:hover a:hover {
         color: $black;

@@ -13,7 +13,7 @@ import { NewCarteiraComponent } from './new-carteira/new-carteira.component';
 import { CarteirasComponent } from './carteiras/carteiras.component';
 import { ForgoutPasswordComponent } from './forgout-password/forgout-password.component';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 @NgModule({
   declarations: [
     LoginComponent,
@@ -31,6 +31,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     FormsModule,
     NgxMaskModule.forRoot(),
     SweetAlert2Module.forRoot(),
+    FontAwesomeModule,
     RoutingModule,
     SharedModule,
   ],

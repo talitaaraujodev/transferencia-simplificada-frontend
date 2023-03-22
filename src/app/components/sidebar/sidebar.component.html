@@ -5,28 +5,37 @@
     </div>
     <ul>
       <li class="sidebar__nav-item">
-        <a class="sidebar__nav-link" routerLink="/">Home</a>
+        <a class="sidebar__nav-link" routerLink="/">
+          <fa-icon [icon]="faHome" class="icon-sidebar"></fa-icon>
+          Home
+        </a>
       </li>
       <li class="sidebar__nav-item">
-        <a class="sidebar__nav-link" routerLink="/transferencias"
-          >Tranferências</a
-        >
+        <a class="sidebar__nav-link" routerLink="/transferencias">
+          <fa-icon [icon]="faList" class="icon-sidebar"></fa-icon>Tranferências
+        </a>
       </li>
       <li class="sidebar__nav-item">
-        <a class="sidebar__nav-link" routerLink="/carteiras">Carteiras</a>
+        <a class="sidebar__nav-link" routerLink="/carteiras">
+          <fa-icon [icon]="faList" class="icon-sidebar"></fa-icon>Carteiras
+        </a>
       </li>
       <li class="sidebar__nav-item">
-        <a class="sidebar__nav-link" routerLink="/nova-transferencia"
-          >Nova Tranferência</a
-        >
+        <a class="sidebar__nav-link" routerLink="/nova-transferencia">
+          <fa-icon [icon]="faTransfer" class="icon-sidebar"></fa-icon>
+          Nova Tranferência
+        </a>
       </li>
       <li class="sidebar__nav-item">
-        <a class="sidebar__nav-link" routerLink="/nova-carteira"
-          >Nova Carteira</a
-        >
+        <a class="sidebar__nav-link" routerLink="/nova-carteira">
+          <fa-icon [icon]="faWallet" class="icon-sidebar"></fa-icon>
+          Nova Carteira
+        </a>
       </li>
       <li class="sidebar__nav-item">
-        <a class="sidebar__nav-link" (click)="logout()">Sair</a>
+        <a class="sidebar__nav-link" (click)="logout()">
+          <fa-icon [icon]="faLogout" class="icon-sidebar"></fa-icon> Sair
+        </a>
       </li>
     </ul>
   </nav>
