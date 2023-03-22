@@ -1,0 +1,15 @@
+@import "../../../assets/scss/variables.scss";
+.not-found {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: $white-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    color: #737272;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+}
