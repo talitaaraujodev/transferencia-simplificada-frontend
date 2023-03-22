@@ -11,6 +11,7 @@ import jwt_decode from 'jwt-decode';
 })
 export class UserService {
   private userSubject = new BehaviorSubject<any>({});
+
   constructor(private httpClient: HttpClient) {}
 
   getUserLogged() {
@@ -34,5 +35,8 @@ export class UserService {
   }
   getUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(`${environment.apiURL}/users`);
+  }
+  getUserById(id: string): Observable<User> {
+    return this.httpClient.get<User>(`${environment.apiURL}/users/${id}`);
   }
 }

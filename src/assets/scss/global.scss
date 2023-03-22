@@ -1,4 +1,5 @@
 @import "./variables.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -8,4 +9,56 @@
   font: inherit;
   vertical-align: baseline;
   font-family: "Roboto", sans-serif;
+}
+
+.form-group {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  padding: 0.5rem 0;
+  &__label {
+    font-weight: 500 !important;
+    padding: 0.5rem 0;
+    color: inherit;
+    margin-bottom: 4px;
+    font-size: 0.9rem;
+  }
+  &__label::after {
+    content: "*";
+    color: $red;
+    font-size: 0.9rem;
+  }
+  &__input {
+    background: $white-secondary;
+    border: 1px solid $gray-primary;
+    border-radius: 7px;
+    color: inherit;
+    padding: 0.7rem;
+    outline: none;
+  }
+}
+table {
+  width: 100%;
+  border-spacing: unset;
+  th,
+  td {
+    border-bottom: 1px solid #a9b1bc;
+    padding: 1em 0.5em;
+    text-align: left;
+    &:nth-child(2) {
+      text-align: left;
+    }
+    box-sizing: border-box;
+  }
+  tbody,
+  td {
+    color: #737272;
+    font-weight: bold;
+  }
+  th {
+    color: #007bff;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-bottom: 2px solid #a9b1bc;
+  }
 }

@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.25);
+  box-shadow:$shadow;
   border-radius: 5px;
   margin: 0 0.2rem;
   padding: 1rem;
@@ -26,32 +26,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-}
-
-.form-group {
-  width: 100%;
-  padding: 1rem;
-  flex-direction: column;
-  display: flex;
-  padding: 0.5rem 0;
-  &__input {
-    background: $white-secondary;
-    border: 1px solid $gray-primary;
-    border-radius: 7px;
-    color: inherit;
-    padding: 0.7rem;
-    outline: none;
-  }
-  &__label {
-    color: inherit;
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
-  }
-  &__label::after {
-    content: "*";
-    color: $red;
-    font-size: 1rem;
-  }
 }
 .btn-new-wallet {
   margin-top: 1rem;

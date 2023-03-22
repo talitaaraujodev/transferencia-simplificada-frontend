@@ -1,16 +1,20 @@
 $white-primary: #fff;
 $white-secondary: #f0f2ff;
-$black: #000;
+$black-primary: #000;
+$black-secondary: rgba(0, 0, 0, 0.25);
 $blue-primary: #00d2ff;
 $blue-secondary: #42e0eb;
+$blue-tertiary: #007bff;
 $purple-primary: #3a7bd5;
 $purple-secondary: #5b86e5;
 $red: #f30066;
 $gray-primary: #a9b1bc;
 $gray-secondary: #dbe4ef;
-$gradient-background: linear-gradient(
+$gray-tertiary: #737272;
+$gradient-primary: linear-gradient(to left, $purple-primary, $blue-primary);
+$gradient-secondary: linear-gradient(
   to bottom,
   $blue-secondary,
   $purple-secondary
 );
-$gradient-primary: linear-gradient(to left, $purple-primary, $blue-primary);
+$shadow: 0px 0px 7px $black-secondary;
